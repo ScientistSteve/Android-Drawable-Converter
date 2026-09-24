@@ -1,0 +1,11 @@
+:root {
+    background: radial-gradient(#FF7500, #FF0000);
+  --md-sys-color-primary: olive;
+  --md-sys-color-secondary: tomato;
+  --md-ref-typeface-brand: 'Google Sans';
+  --md-ref-typeface-plain: 'Google Sans';
+}
+
+.paragraph {
+    
+}

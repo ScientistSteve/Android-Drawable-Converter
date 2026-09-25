@@ -24,31 +24,38 @@ document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
 </head>
 <body>
 
-<h1 class="md-typescale-display-small">Img to Android Drawable Converter</h1>
+<h1 class="md-typescale-display-small"><b>Img to Android Drawable Converter</b></h1>
 <p>Upload a 12x12 image. Each pixel is converted into a path in a VectorDrawable XML file, so no separate PNG is needed - just drop the .xml straight into <code>res/drawable/</code>.</p>
 
 <input type="file" id="fileInput" accept="image/*">
 <br><br>
 
-<label for="nameInput">File name (no extension):</label>
+<md-outlined-text-field label="File Name" value="ic_icon" id="nameInput"></md-outlined-text-field>
+<br><br>
+
+<label><md-checkbox touch-target="none" id="forceWhite" checked></md-checkbox>Force White</label>
+<br><br>
+
+<md-filled-button id="convertBtn"><md-icon slot="icon">play_arrow</md-icon>Convert</md-filled-button>
+
 <br>
-<input type="text" id="nameInput" value="ic_icon">
-<br><br>
-
-<input type="checkbox" id="forceWhite" checked>
-<label for="forceWhite">Force white (ignore source colors, use alpha as a mask)</label>
-<br><br>
-
-<md-filled-button id="convertBtn">Convert</md-filled-button>
-
-<br><br>
+<br>
 <canvas id="canvas" width="12" height="12"></canvas>
 
-<br><br>
-<div id="status"></div>
 <br>
-<textarea id="output" rows="20" cols="80" readonly></textarea>
+<br>
+<div id="status"></div>
+<textarea id="output" type="text" readonly></textarea>
+<md-filled-icon-button onclick="copy()"><md-icon>content_copy</md-icon></md-filled-icon-button>
 
+<script>
+function copy(){
+var copyText = document.getElementById("output");
+copyText.select();
+copyText.setSelectionRange(0, 99999);
+navigator.clipboard.writeText(copyText.value);
+}
+</script>
 <script>
 var fileInput = document.getElementById('fileInput');
 var nameInput = document.getElementById('nameInput');

@@ -1,11 +1,22 @@
 :root {
-    background:#83B9E5;
+    background: linear-gradient(#FFFFFF,#808000);
+    font-family: "Outfit";
+    color: #808000;
   --md-sys-color-primary: olive;
   --md-sys-color-secondary: tomato;
-  --md-ref-typeface-brand: 'Google Sans';
-  --md-ref-typeface-plain: 'Google Sans';
+  --md-ref-typeface-brand: 'Outfit';
+  --md-ref-typeface-plain: 'Outfit';
 }
-
-.paragraph {
-    
+textarea {
+    height: 500px;
+    width: 100%;;
+    resize: none;
+    border-radius: 20px;
+    border: solid #1D1D1D;
+}
+canvas{
+    height: 100%;
+    width: 100%;
+    border: solid #1D1D1D;
+    border-radius: 20px;
 }
